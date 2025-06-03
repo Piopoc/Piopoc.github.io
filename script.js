@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load projects
   loadProjects();
   
-  // Initialize form handling
-  initializeContactForm();
-  
   // Initialize scroll to top functionality
   initializeScrollToTop();
   
@@ -25,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Smooth scrolling for navigation links
   initializeSmoothScrolling();
+  
+  // Setup email copy functionality
+  setupEmailCopy();
 });
 
 // Typed.js initialization for animated text
@@ -159,107 +159,6 @@ function createProjectCard(project, index) {
   return col;
 }
 
-// Contact form handling
-function initializeContactForm() {
-  const form = document.getElementById('contact-form');
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
-  const successAlert = document.getElementById('form-success');
-  
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Reset previous validation states
-    clearValidationErrors();
-    
-    // Validate form
-    let isValid = true;
-    
-    // Validate name
-    if (!nameInput.value.trim()) {
-      showValidationError('name', 'Il nome è obbligatorio');
-      isValid = false;
-    } else if (nameInput.value.trim().length < 2) {
-      showValidationError('name', 'Il nome deve avere almeno 2 caratteri');
-      isValid = false;
-    }
-    
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailInput.value.trim()) {
-      showValidationError('email', 'L\'email è obbligatoria');
-      isValid = false;
-    } else if (!emailRegex.test(emailInput.value.trim())) {
-      showValidationError('email', 'Inserisci un\'email valida');
-      isValid = false;
-    }
-    
-    // Validate message
-    if (!messageInput.value.trim()) {
-      showValidationError('message', 'Il messaggio è obbligatorio');
-      isValid = false;
-    } else if (messageInput.value.trim().length < 10) {
-      showValidationError('message', 'Il messaggio deve avere almeno 10 caratteri');
-      isValid = false;
-    }
-    
-    // If form is valid, simulate sending
-    if (isValid) {
-      // Simulate form submission
-      const submitButton = form.querySelector('button[type="submit"]');
-      const originalText = submitButton.innerHTML;
-      
-      submitButton.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Invio in corso...';
-      submitButton.disabled = true;
-      
-      setTimeout(() => {
-        // Show success message
-        successAlert.style.display = 'block';
-        form.reset();
-        
-        // Reset button
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          successAlert.style.display = 'none';
-        }, 5000);
-        
-        // In a real application, you would send the data to your server here
-        console.log('Form data:', {
-          name: nameInput.value.trim(),
-          email: emailInput.value.trim(),
-          message: messageInput.value.trim()
-        });
-      }, 2000);
-    }
-  });
-}
-
-// Validation helper functions
-function showValidationError(fieldId, message) {
-  const field = document.getElementById(fieldId);
-  const errorDiv = document.getElementById(fieldId + '-error');
-  
-  field.classList.add('is-invalid');
-  errorDiv.textContent = message;
-  errorDiv.style.display = 'block';
-}
-
-function clearValidationErrors() {
-  const fields = ['name', 'email', 'message'];
-  fields.forEach(fieldId => {
-    const field = document.getElementById(fieldId);
-    const errorDiv = document.getElementById(fieldId + '-error');
-    
-    field.classList.remove('is-invalid');
-    errorDiv.textContent = '';
-    errorDiv.style.display = 'none';
-  });
-}
-
 // Scroll to top functionality
 function initializeScrollToTop() {
   const scrollToTopBtn = document.getElementById('scrollToTop');
@@ -373,3 +272,21 @@ const throttledScrollHandler = throttle(function() {
 }, 16); // ~60fps
 
 window.addEventListener('scroll', throttledScrollHandler);
+
+// Rimuovi (o commenta) il codice di "initializeContactForm" e la sua chiamata
+
+// Aggiungi la funzione per copiare l'email
+function setupEmailCopy() {
+  const emailSpan = document.getElementById('clickable-email');
+  const copiedMsg = document.getElementById('email-copied-msg');
+
+  if (emailSpan && copiedMsg) {
+    emailSpan.addEventListener('click', () => {
+      navigator.clipboard.writeText(emailSpan.textContent.trim())
+        .then(() => {
+          copiedMsg.style.display = 'block';
+          setTimeout(() => copiedMsg.style.display = 'none', 2000);
+        });
+    });
+  }
+}

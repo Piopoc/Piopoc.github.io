@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filippo Corradi - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-theme="dark">
+  <!-- Background Gradient -->
+  <div class="gradient-background"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">&lt; Developer.io/&gt;</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container text-center">
+      <h1 class="hero-title" data-aos="fade-up">I'm Filippo Corradi</h1>
+      <h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+        <span id="typed-text"></span>
+      </h2>
+      
+      <!-- Social Links Hero -->
+      <div class="hero-social mt-4" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://github.com/Piopoc" class="social-hero-btn me-3" target="_blank">
+          <i class="bi bi-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="assets/cv/curriculum.pdf" class="social-hero-btn me-3" target="_blank">
+          <i class="bi bi-file-earmark-person"></i>
+          <span>CV</span>
+        </a>
+        <a href="https://www.linkedin.com/in/Piopoc" class="social-hero-btn me-3" target="_blank">
+          <i class="bi bi-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://instagram.com/filippo.corradi_" class="social-hero-btn" target="_blank">
+          <i class="bi bi-instagram"></i>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <p class="lead">Sono uno studente di Ingegneria Informatica appassionato di sviluppo software e programmazione. La mia passione per la tecnologia mi spinge a creare soluzioni innovative e user-friendly.</p>
+          <p>Durante il mio percorso accademico, ho sviluppato competenze in diverse tecnologie e linguaggi di programmazione, sempre con l'obiettivo di creare esperienze digitali coinvolgenti e funzionali.</p>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div id="skills-container">
+            <div class="skill-badge">C++</div>
+            <div class="skill-badge">C</div>
+            <div class="skill-badge">Python</div>
+            <div class="skill-badge">Go</div>
+            <div class="skill-badge">Java</div>
+            <div class="skill-badge">HTML/CSS</div>
+            <div class="skill-badge">Bootstrap</div>
+            <div class="skill-badge">Git</div>
+            <div class="skill-badge">SQL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">Projects</h2>
+      <div id="projects-loading" class="text-center my-4">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="row" id="projects-container"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">Contact Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="mb-3">
+              <input type="text" id="name" class="form-control" placeholder="Il tuo nome" required>
+              <div id="name-error" class="invalid-feedback"></div>
+            </div>
+
+            <div class="mb-3">
+              <input type="email" id="email" class="form-control" placeholder="La tua email" required>
+              <div id="email-error" class="invalid-feedback"></div>
+            </div>
+
+            <div class="mb-3">
+              <textarea id="message" class="form-control" rows="5" placeholder="Il tuo messaggio" required></textarea>
+              <div id="message-error" class="invalid-feedback"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="bi bi-send me-2"></i>Invia Messaggio
+            </button>
+            <div id="form-success" class="alert alert-success mt-3" style="display: none;">
+              <i class="bi bi-check-circle me-2"></i>Messaggio inviato con successo!
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Filippo Corradi. All rights reserved.</p>
+      <div class="social-links mt-3">
+        <a href="https://github.com/Piopoc" class="social-icon" target="_blank">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/Piopoc" class="social-icon" target="_blank">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/filippo.corradi_" class="social-icon" target="_blank">
+          <i class="bi bi-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <button id="scrollToTop" class="scroll-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
+</body>
+</html>

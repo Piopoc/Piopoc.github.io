@@ -106,18 +106,24 @@
     <div class="container">
       <h2 class="text-center mb-5" data-aos="fade-up">Contact Me</h2>
       <div class="row justify-content-center">
-        <p class="text-center fs-5" data-aos="fade-up" data-aos-delay="200">
-          <span id="clickable-email" 
-                style="cursor: pointer; color: var(--primary-color); font-weight: bold;">
-            filippo.corradi2003@gmail.com
-          </span>
-        </p>
-        <div id="email-copied-msg" 
-             class="alert alert-success mt-3 text-center py-2" 
-             style="display: none; max-width: 300px; margin: 0 auto;">
-          Email copiata!
+        <div class="col-md-8 text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-card p-4">
+            <i class="bi bi-envelope-fill contact-icon mb-3"></i>
+            <p class="contact-text mb-3">Contattami via email</p>
+            <div class="email-container" id="clickable-email">
+              <i class="bi bi-copy copy-icon"></i>
+              <span class="email-text">filippo.corradi2003@gmail.com</span>
+            </div>
+            <p class="contact-hint mt-2">Clicca per copiare</p>
+          </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Toast notification per email copiata -->
+    <div id="email-copied-msg" class="toast-notification">
+      <i class="bi bi-check-circle-fill me-2"></i>
+      Copiato negli appunti
     </div>
   </section>
 

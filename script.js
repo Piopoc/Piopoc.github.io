@@ -1,4 +1,3 @@
-// Initialize AOS (Animate On Scroll) and other components when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize AOS
   AOS.init({
@@ -33,7 +32,6 @@ function initializeTypedText() {
     strings: [
       'Computer Engineering Student',
       'Backend Developer',
-      
       'Problem Solver'
     ],
     typeSpeed: 80,
@@ -273,19 +271,35 @@ const throttledScrollHandler = throttle(function() {
 
 window.addEventListener('scroll', throttledScrollHandler);
 
-// Rimuovi (o commenta) il codice di "initializeContactForm" e la sua chiamata
-
 // Aggiungi la funzione per copiare l'email
 function setupEmailCopy() {
-  const emailSpan = document.getElementById('clickable-email');
+  const emailContainer = document.getElementById('clickable-email');
   const copiedMsg = document.getElementById('email-copied-msg');
 
-  if (emailSpan && copiedMsg) {
-    emailSpan.addEventListener('click', () => {
-      navigator.clipboard.writeText(emailSpan.textContent.trim())
+  if (emailContainer && copiedMsg) {
+    emailContainer.addEventListener('click', () => {
+      const emailText = emailContainer.querySelector('.email-text').textContent.trim();
+      navigator.clipboard.writeText(emailText)
         .then(() => {
-          copiedMsg.style.display = 'block';
-          setTimeout(() => copiedMsg.style.display = 'none', 2000);
+          copiedMsg.classList.add('show');
+          setTimeout(() => {
+            copiedMsg.classList.remove('show');
+          }, 3000);
+        })
+        .catch(err => {
+          console.error('Errore nella copia:', err);
+          // Fallback per browser più vecchi
+          const textArea = document.createElement('textarea');
+          textArea.value = emailText;
+          document.body.appendChild(textArea);
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+          
+          copiedMsg.classList.add('show');
+          setTimeout(() => {
+            copiedMsg.classList.remove('show');
+          }, 3000);
         });
     });
   }

@@ -1,0 +1,223 @@
+.about {
+  background: var(--concrete);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--red-accent), transparent);
+  border-radius: 2px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--pure-white);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 1rem;
+}
+
+.redDivider {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--red-accent), transparent);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.bioCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bio {
+  padding: 2rem;
+  border-radius: var(--radius-card);
+}
+
+.bioText {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--metal-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.bioText:last-child {
+  margin-bottom: 0;
+}
+
+.interestsSection {
+  text-align: center;
+}
+
+.interestsTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pure-white);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.interestsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.interestCard {
+  background: var(--concrete);
+  border: 1px solid var(--metal-dark);
+  border-radius: var(--radius-card);
+  padding: 1.2rem;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.interestCard i {
+  font-size: 1.5rem;
+  color: var(--red-accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.interestCard h4 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pure-white);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.interestCard p {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--metal-light);
+  line-height: 1.4;
+}
+
+.skillsCol {
+  padding: 2rem;
+  background: var(--concrete-light);
+  border: 2px solid var(--metal-dark);
+  border-radius: var(--radius-card);
+  position: sticky;
+  top: 100px;
+}
+
+.skillsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 700;
+  color: var(--pure-white);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.skillsDivider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--red-accent), transparent);
+  margin: 0.5rem auto 2rem;
+  border-radius: 2px;
+}
+
+.skillsCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.category {
+  text-align: center;
+}
+
+.categoryTitle {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--metal-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  background: var(--concrete);
+  border: 2px solid var(--metal-dark);
+  border-radius: var(--radius-badge);
+  color: var(--metal-light);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  min-width: 70px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 4rem 1rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .interestsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillsCol {
+    position: static;
+    padding: 1.5rem;
+  }
+}

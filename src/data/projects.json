@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Cloud IoT Simulator",
+    "description": "Simula la generazione di dati da dispositivi IoT e li invia a un server cloud di Google. Include dashboard per visualizzare i dati in tempo reale e grafici interattivi.",
+    "technologies": ["Go", "HTML5", "Chart.js", "Bootstrap", "Dotenv"],
+    "github": "https://github.com/Piopoc/cloud-iot-platform"
+  },
+  {
+    "title": "Algoritmi Bioinformatica",
+    "description": "Algoritmi sviluppati durante il corso di Bioinformatica: allineamento di sequenze, analisi filogenetica e predizione di strutture proteiche.",
+    "technologies": ["Python", "Java"],
+    "github": "https://github.com/Piopoc/script_Bioinformatica"
+  },
+  {
+    "title": "Monopoly",
+    "description": "Gioco da tavolo classico ricreato in digitale. Include meccaniche multiplayer/PvE, gestione del denaro, proprietà e tabellone. Progetto di programmazione orientata agli oggetti.",
+    "technologies": ["C++", "CMake"],
+    "github": "https://github.com/Piopoc/Monopoly"
+  },
+  {
+    "title": "Bookshelf",
+    "description": "Biblioteca virtuale con funzionalità di ricerca, aggiunta e rimozione di libri. Esercizio di programmazione orientata agli oggetti.",
+    "technologies": ["C++", "C", "CMake"],
+    "github": "https://github.com/Piopoc/Bookshelf"
+  },
+  {
+    "title": "Second Brain",
+    "description": "Sistema di knowledge management personale per organizzare note, idee e risorse. Strumento per il secondo cervello digitale.",
+    "technologies": ["Python", "Markdown", "CLI"],
+    "github": "https://github.com/Piopoc/secondBrain"
+  },
+  {
+    "title": "WA25-26 FELLA",
+    "description": "Progetto universitario di Web Applications per l'anno accademico 2025/2026. Applicazione web full-stack con stack moderno.",
+    "technologies": ["JavaScript", "HTML/CSS", "Node.js", "Database"],
+    "github": "https://bitbucket.org/upd-dei-stud-prj/wa2526-fella/src/master/"
+  },
+  {
+    "title": "SEUPD25-26 FELLA",
+    "description": "Progetto universitario di Ingegneria del Software. Sviluppo di un'applicazione seguendo metodologie agili e pattern architetturali.",
+    "technologies": ["Java", "UML", "Agile", "Design Patterns"],
+    "github": "https://bitbucket.org/upd-dei-stud-prj/seupd2526-fella/src/master/"
+  }
+]

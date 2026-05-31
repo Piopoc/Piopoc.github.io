@@ -1,0 +1,199 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+  background: var(--concrete-light);
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(220, 20, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(102, 102, 102, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, var(--concrete) 0%, var(--concrete-light) 100%);
+  opacity: 0.8;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.avatarContainer {
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.avatarInner {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  background: var(--concrete);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarInitials {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--pure-white);
+  letter-spacing: 0.1em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--pure-white);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  position: relative;
+}
+
+.glitch {
+  animation: glitch 0.3s ease-in-out;
+}
+
+@keyframes glitch {
+  0%, 100% { 
+    transform: translate(0);
+    text-shadow: 2px 2px 0 var(--red-accent);
+  }
+  25% { 
+    transform: translate(-2px, 2px);
+    text-shadow: -2px -2px 0 var(--red-accent);
+  }
+  50% { 
+    transform: translate(2px, -2px);
+    text-shadow: 2px -2px 0 var(--red-accent);
+  }
+  75% { 
+    transform: translate(-2px, -2px);
+    text-shadow: -2px 2px 0 var(--red-accent);
+  }
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.roleText {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  color: var(--metal-light);
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+.redDivider {
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--red-accent), transparent);
+  border-radius: 2px;
+}
+
+.social {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.socialBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 16px 28px;
+  border-radius: var(--radius-btn);
+}
+
+.socialBtn i {
+  font-size: 1.2rem;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--metal-light);
+  font-size: 1.5rem;
+  z-index: 1;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.scrollHint:hover {
+  color: var(--red-accent);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1rem;
+  }
+
+  .social {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .socialBtn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  .redDivider {
+    width: 150px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .avatarInner {
+    width: 75px;
+    height: 75px;
+  }
+
+  .avatarInitials {
+    font-size: 1.8rem;
+  }
+}

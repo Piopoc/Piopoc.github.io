@@ -1,0 +1,129 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.scrolled {
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: var(--nav-h);
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.menu {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.link {
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lang {
+  display: flex;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.lang button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.lang button:hover {
+  color: var(--text);
+}
+
+.lang .langActive {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.cv {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+.toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  place-items: center;
+}
+
+@media (max-width: 720px) {
+  .menu {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1rem 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .link {
+    padding: 0.85rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  .actions {
+    margin-left: auto;
+  }
+
+  .toggle {
+    display: grid;
+  }
+}

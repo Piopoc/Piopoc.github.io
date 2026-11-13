@@ -52,32 +52,29 @@
 
 .interests {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 2.5rem;
   margin-top: 1.25rem;
   list-style: none;
-  border-top: 1px solid var(--line);
-}
-
-.interests li + li {
-  border-left: 1px solid var(--line);
 }
 
 .interest {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 0.5rem;
   height: 100%;
-  padding: 1.5rem 1.25rem 0.5rem;
-}
-
-.interests li:first-child .interest {
-  padding-left: 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
 }
 
 .interest i {
+  grid-row: span 2;
   font-size: 1.15rem;
   color: var(--accent);
 }
 
 .interest h4 {
-  margin: 0.9rem 0 0.4rem;
+  margin-bottom: 0.3rem;
   font-size: 0.95rem;
   font-weight: 600;
 }
@@ -95,27 +92,12 @@
   }
 
   .interests {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .interests {
     grid-template-columns: 1fr;
-  }
-
-  .interests li + li {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-  }
-
-  .interest,
-  .interests li:first-child .interest {
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    column-gap: 0.5rem;
-    padding: 1.1rem 0;
-  }
-
-  .interest i {
-    grid-row: span 2;
-  }
-
-  .interest h4 {
-    margin: 0 0 0.25rem;
   }
 }

@@ -8,6 +8,7 @@ import styles from './Contact.module.css'
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 const channels = [
+  { label: site.email, icon: 'bi-envelope', url: `mailto:${site.email}` },
   { label: 'LinkedIn', icon: 'bi-linkedin', url: site.linkedin },
   { label: 'GitHub', icon: 'bi-github', url: site.github },
   { label: 'Instagram', icon: 'bi-instagram', url: site.instagram },
@@ -39,7 +40,7 @@ export default function Contact() {
       <div className="container">
         <Reveal>
           <header className="section-head">
-            <span className="section-index">03</span>
+            <span className="section-index">04</span>
             <h2>{t.contact.title}</h2>
           </header>
         </Reveal>
@@ -50,7 +51,7 @@ export default function Contact() {
             <ul className={styles.channels}>
               {channels.map((c) => (
                 <li key={c.label}>
-                  <a href={c.url} target="_blank" rel="noopener noreferrer">
+                  <a href={c.url} {...(c.url.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
                     <i className={`bi ${c.icon}`} aria-hidden="true" />
                     <span>{c.label}</span>
                     <i className={`bi bi-arrow-up-right ${styles.arrow}`} aria-hidden="true" />

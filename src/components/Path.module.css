@@ -1,0 +1,75 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.entry {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 0.1rem 0 1.5rem 1.5rem;
+  border-left: 1px solid var(--line-strong);
+}
+
+.entry + .entry {
+  margin-top: 0;
+}
+
+.entry:last-child {
+  padding-bottom: 0;
+}
+
+.entry::before {
+  content: '';
+  position: absolute;
+  top: 0.45rem;
+  left: -4.5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--faint);
+}
+
+.entry h4 {
+  margin-top: 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.org {
+  margin-top: 0.2rem;
+  color: var(--accent);
+}
+
+.org span {
+  color: var(--muted);
+}
+
+.points {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 1.1rem;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.points li::marker {
+  color: var(--faint);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

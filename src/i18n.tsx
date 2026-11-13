@@ -62,14 +62,8 @@ const it = {
   },
   contact: {
     title: 'Contatti',
-    lead: 'Per una proposta, una collaborazione o una semplice domanda: scrivimi via email o con il modulo qui accanto.',
-    name: 'Nome',
-    email: 'Email',
-    message: 'Messaggio',
-    send: 'Invia messaggio',
-    sending: 'Invio in corso…',
-    success: 'Messaggio inviato, grazie! Ti rispondo appena possibile.',
-    error: 'Invio non riuscito. Riprova tra poco oppure scrivimi direttamente via email.',
+    lead: 'Per una proposta, una collaborazione o una semplice domanda: scrivimi via email, rispondo volentieri.',
+    write: 'Scrivimi',
   },
   footer: { top: 'Torna su' },
 }
@@ -134,14 +128,8 @@ const en: typeof it = {
   },
   contact: {
     title: 'Contact',
-    lead: 'For an opportunity, a collaboration or just a question: drop me an email or use the form.',
-    name: 'Name',
-    email: 'Email',
-    message: 'Message',
-    send: 'Send message',
-    sending: 'Sending…',
-    success: 'Message sent, thank you! I will get back to you as soon as possible.',
-    error: 'Something went wrong. Please try again shortly or email me directly.',
+    lead: 'For an opportunity, a collaboration or just a question: drop me an email, I am happy to reply.',
+    write: 'Email me',
   },
   footer: { top: 'Back to top' },
 }

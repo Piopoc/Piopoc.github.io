@@ -11,7 +11,6 @@
     "deploy": "vite build && npx gh-pages -d dist"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
     "bootstrap-icons": "^1.13.2",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"

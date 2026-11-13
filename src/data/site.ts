@@ -9,9 +9,3 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/filippo-corradi',
   instagram: 'https://instagram.com/filippo.corradi_',
 }
-
-export const emailjsConfig = {
-  publicKey: 'Zd9gE3kR37KAZS8Lu',
-  serviceId: 'service_18pzx5m',
-  templateId: 'template_z0nfr8k',
-}

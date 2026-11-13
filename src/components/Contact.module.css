@@ -32,6 +32,11 @@
   color: var(--text);
 }
 
+.channels span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .arrow {
   margin-left: auto;
   font-size: 0.85rem;

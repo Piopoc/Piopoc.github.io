@@ -2,15 +2,17 @@ import { useI18n } from '../i18n'
 import Reveal from './Reveal'
 import styles from './About.module.css'
 
-const interestIcons = ['bi-lightbulb', 'bi-puzzle', 'bi-people', 'bi-tree', 'bi-film']
+const interestIcons = ['bi-lightbulb', 'bi-puzzle', 'bi-people', 'bi-tree', 'bi-film', 'bi-hdd-rack']
 
 export default function About() {
   const { t } = useI18n()
 
   const skills = [
-    { title: t.about.skills.languages, items: ['C++', 'C', 'Python', 'Go', 'Java'] },
-    { title: t.about.skills.web, items: ['HTML/CSS', 'Bootstrap'] },
-    { title: t.about.skills.tools, items: ['Git', 'SQL'] },
+    { title: t.about.skills.programming, items: ['Java', 'Python', 'C++', 'Go', 'C', 'SQL', 'HTML/CSS'] },
+    { title: t.about.skills.backend, items: ['Spring Boot', 'REST APIs', 'Tomcat', 'Servlet/JSP'] },
+    { title: t.about.skills.data, items: ['PostgreSQL', 'MongoDB', 'Elasticsearch', 'BigQuery'] },
+    { title: t.about.skills.tools, items: ['Docker', 'Docker Compose', 'Git', 'Maven', 'CMake', 'LaTeX'] },
+    { title: t.about.skills.spoken, items: t.about.spoken },
   ]
 
   return (

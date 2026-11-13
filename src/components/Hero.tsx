@@ -16,6 +16,7 @@ export default function Hero() {
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={`container ${styles.inner}`}>
         <div className={styles.copy}>
+          <img src={site.photo} alt="Filippo Corradi" width={88} height={88} className={styles.photo} />
           <p className={styles.eyebrow}>
             <span className={styles.dot} />
             {t.hero.eyebrow}
@@ -57,7 +58,7 @@ export default function Hero() {
             <span className={styles.out}>filippo corradi — {t.hero.terminal.role}</span>
             {'\n\n'}
             <span className={styles.prompt}>$</span> ls skills/{'\n'}
-            <span className={styles.out}>c++  c  python  go  java  sql  git</span>
+            <span className={styles.out}>java  python  c++  go  sql  docker</span>
             {'\n\n'}
             <span className={styles.prompt}>$</span> cat focus.txt{'\n'}
             <span className={styles.out}>{t.hero.terminal.focus}</span>

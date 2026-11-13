@@ -6,7 +6,6 @@ import styles from './Contact.module.css'
 const channels = [
   { label: 'LinkedIn', icon: 'bi-linkedin', url: site.linkedin },
   { label: 'GitHub', icon: 'bi-github', url: site.github },
-  { label: 'Instagram', icon: 'bi-instagram', url: site.instagram },
 ]
 
 export default function Contact() {

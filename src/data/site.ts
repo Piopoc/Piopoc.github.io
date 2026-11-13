@@ -7,5 +7,4 @@ export const site = {
   photo: '/filippo-corradi.jpg',
   github: 'https://github.com/Piopoc',
   linkedin: 'https://www.linkedin.com/in/filippo-corradi',
-  instagram: 'https://instagram.com/filippo.corradi_',
 }

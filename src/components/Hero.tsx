@@ -5,7 +5,6 @@ import styles from './Hero.module.css'
 const socials = [
   { label: 'GitHub', icon: 'bi-github', url: site.github },
   { label: 'LinkedIn', icon: 'bi-linkedin', url: site.linkedin },
-  { label: 'Instagram', icon: 'bi-instagram', url: site.instagram },
 ]
 
 export default function Hero() {

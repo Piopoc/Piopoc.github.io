@@ -18,7 +18,7 @@ export default function Projects() {
       <div className="container">
         <Reveal>
           <header className="section-head">
-            <span className="section-index">02</span>
+            <span className="section-index">03</span>
             <h2>{t.projects.title}</h2>
             <p>{t.projects.lead}</p>
           </header>
@@ -30,12 +30,16 @@ export default function Projects() {
             return (
               <li key={project.url}>
                 <Reveal delay={(i % 3) * 70} className={styles.cell}>
-                  <a href={project.url} target="_blank" rel="noopener noreferrer" className={`card ${styles.card}`}>
+                  <article className={`card ${styles.card}`}>
                     <div className={styles.top}>
                       <i className="bi bi-folder2" aria-hidden="true" />
                       <i className={`bi bi-arrow-up-right ${styles.arrow}`} aria-hidden="true" />
                     </div>
-                    <h3>{project.title[lang]}</h3>
+                    <h3>
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.main}>
+                        {project.title[lang]}
+                      </a>
+                    </h3>
                     <p>{project.description[lang]}</p>
                     <div className={styles.tags}>
                       {project.technologies.map((tech) => (
@@ -44,11 +48,19 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                    <span className={styles.source}>
-                      <i className={`bi ${h.icon}`} aria-hidden="true" />
-                      {t.projects.viewOn} {h.name}
-                    </span>
-                  </a>
+                    <div className={styles.source}>
+                      <span>
+                        <i className={`bi ${h.icon}`} aria-hidden="true" />
+                        {t.projects.viewOn} {h.name}
+                      </span>
+                      {'paper' in project && (
+                        <a href={project.paper} target="_blank" rel="noopener noreferrer" className={styles.paper}>
+                          <i className="bi bi-file-earmark-text" aria-hidden="true" />
+                          {t.projects.paper}
+                        </a>
+                      )}
+                    </div>
+                  </article>
                 </Reveal>
               </li>
             )

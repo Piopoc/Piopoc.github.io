@@ -10,6 +10,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -62,9 +63,34 @@
   margin-top: auto;
 }
 
+.main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.source span,
+.paper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paper {
+  position: relative;
+  z-index: 1;
+  color: var(--accent);
+}
+
+.paper:hover {
+  text-decoration: underline;
+}
+
 .source {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
   margin-top: 1.25rem;
   padding-top: 1rem;
